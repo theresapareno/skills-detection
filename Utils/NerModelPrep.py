@@ -92,14 +92,17 @@ def prepareData(path, training_path):
     :param training_path:
     :return:
     """
-    data = load_data(path)  # gets the original ubiai output
+
+    # gets the original ubiai output
+    data = load_data(path)
+
     big_list = convert_json(data)
     get_raw_text(training_path, data)
     create_split_data(training_path, big_list)
     print("Successfully created all necessary training data!")
 
 
-training_path = r"C:\Users\there\PycharmProjects\careerguide\Data\NER_trainingData"
-# path = r"C:\Users\there\PycharmProjects\careerguide\Data\UBIAI\output\ner.json"
-path = r"C:\Users\there\PycharmProjects\careerguide\Data\NER_trainingData\all_training.json"
+training_path = r"../Data/NER_trainingData"
+
+path = r"../Data/UBIAI/output/ner.json"
 prepareData(path, training_path)
