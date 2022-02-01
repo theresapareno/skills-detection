@@ -12,7 +12,7 @@ def load_data(data: Path):
     return data
 
 
-def count_distribution(data: list):
+def count_frequency(data: list):
     values_per_label = []
     for i in data:
         annotation = i['annotation']
@@ -29,7 +29,7 @@ def count_distribution(data: list):
 
 data_path = r"../Data/UBIAI/output/ner.json"
 data = load_data(data_path)
-labels_count = count_distribution(data)
+labels_count = count_frequency(data)
 print(labels_count)
 
 
