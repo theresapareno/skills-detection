@@ -74,7 +74,7 @@ def get_raw_text(path: Path, data):
     print("Successfully stored the raw text that will be used for Bi-LSTM! ")
 
 
-def create_split_data(path, data, test_size=0.1):
+def create_split_data(path, data, test_size=0.2):
     train_data, valid_data = train_test_split(data, test_size=test_size)
     print("Length of training data: ", len(train_data))
     print("Length of valid data: ", len(valid_data))
