@@ -12,13 +12,14 @@ from pathlib import Path
 nlp = spacy.blank("en")
 
 
-# get the ubiai data
+# this function will read and load the json file
 def load_data(data_path: Path):
     with open(data_path, 'rb') as jf:
         data = json.load(jf)
     return data
 
 
+# this function will convert to the necessary json format spacy requires to prepare the data
 def convert_json(data):
     bigList = []
     for i in data:
@@ -64,16 +65,7 @@ def create_training(TRAIN_DATA):
     return db
 
 
-def get_raw_text(path: Path, data):
-    raw_text = []
-    for i in data:
-        sentences = i["document"]
-        sent = {"text": sentences}
-        raw_text.append(sent)
-    srsly.write_json(path + "\\raw_text.jsonl", data)
-    print("Successfully stored the raw text that will be used for Bi-LSTM! ")
-
-
+# splits and saves the data to disk
 def create_split_data(path, data, test_size=0.2):
     train_data, valid_data = train_test_split(data, test_size=test_size)
     print("Length of training data: ", len(train_data))
@@ -85,6 +77,7 @@ def create_split_data(path, data, test_size=0.2):
     print("Successfully created training and valid data")
 
 
+# this block will execute all functions above
 def prepareData(path, training_path):
     """
     This will convert the json from ubiai to .spacy format.
@@ -92,12 +85,9 @@ def prepareData(path, training_path):
     :param training_path:
     :return:
     """
-
     # gets the original ubiai output
     data = load_data(path)
-
     big_list = convert_json(data)
-    get_raw_text(training_path, data)
     create_split_data(training_path, big_list)
     print("Successfully created all necessary training data!")
 
