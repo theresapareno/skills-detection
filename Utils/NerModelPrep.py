@@ -78,7 +78,7 @@ def create_split_data(path, data, test_size=0.2):
 
 
 # this block will execute all functions above
-def prepareData(path, training_path):
+def prepare_data(path, training_path):
     """
     This will convert the json from ubiai to .spacy format.
     :param path:
@@ -95,4 +95,4 @@ def prepareData(path, training_path):
 training_path = r"../Data/NER_trainingData"
 
 path = r"../Data/UBIAI/output/ner.json"
-prepareData(path, training_path)
+prepare_data(path, training_path)
