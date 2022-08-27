@@ -92,7 +92,7 @@ def prepare_data(path, training_path):
     print("Successfully created all necessary training data!")
 
 
-training_path = r"../Data/NER_trainingData"
+training_path = r"../Data"
 
-path = r"../Data/UBIAI/output/ner.json"
+path = r"../Data/ner.json"
 prepare_data(path, training_path)

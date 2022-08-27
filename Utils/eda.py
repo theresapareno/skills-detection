@@ -27,7 +27,7 @@ def count_frequency(data: list):
     return count
 
 
-data_path = r"../Data/UBIAI/output/ner.json"
+data_path = r"../Data/ner.json"
 data = load_data(data_path)
 labels_count = count_frequency(data)
 print(labels_count)

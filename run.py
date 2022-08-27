@@ -10,7 +10,7 @@ Programming skills, e.g. Python, R, Java, C++
 Comfortable reporting results to both technical and non-technical audiences
 Ability to work with people from various backgrounds/cultures
 Strong interpersonal skills with the desire to share knowledge and skills
-Preferably experience in Visualization Tools, e.g. Tableau, Qlik as well as Data processing and/or database programming skills, e.g. SQL 
+Preferably experience in Visualization Tools, e.g. Tableau, Qlik as well as Data processing and/or database programming skills, e.g. SQL.
 """
 
 
